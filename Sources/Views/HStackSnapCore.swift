@@ -143,7 +143,7 @@ public struct HStackSnapCore<Content: View>: View {
     /// Used to check if children configuration (ids or sizes) have changed.
     @State private var preferences: [ContentPreferenceData] = [] {
         didSet {
-            if oldValue.map(\.id) != preferences.map(\.id) || oldValue.map { $0.rect.size } != preferences.map { $0.rect.size } {
+            if oldValue.map(\.id) != preferences.map(\.id) || oldValue.map { $0.rect.size.width } != preferences.map { $0.rect.size.width } {
                 hasCalculatedFrames = false
             }
         }
